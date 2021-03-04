@@ -25,6 +25,6 @@ Project ini di kembangkan dengan menggunakan python dengan framework django. Fro
 | module_non_peraturan | module data non peraturan (CMS) | folder |
 | module_admin_list | module manage admin (CMS) | folder |
 | module_pengetahuan_hukum_praktis | module pengetahuan hukum (CMS) | folder |
-| README.md | informasi project (CMS) | folder |
-| manage.py | main program django (CMS) | folder |
-| requirements.txt | list requirements package pip (CMS) | folder | 
+| README.md | informasi project | file |
+| manage.py | main program django | file |
+| requirements.txt | list requirements package pip | file | 
