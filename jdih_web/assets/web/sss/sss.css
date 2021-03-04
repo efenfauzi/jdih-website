@@ -1,0 +1,88 @@
+.sss {
+	height: 0;
+	margin: 0; 
+	padding: 0;
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+.ssslide {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	overflow: hidden;
+	height: 380px;
+}
+
+.ssslide img {
+	max-width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: block;
+}
+
+.sssnext, .sssprev {
+	width: 25px;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	background: url('images/arr.png') no-repeat;
+}
+
+.sssprev {
+	left: 3%;
+	background-position: 0 50%;
+}
+
+.sssnext {
+	right: 3%;
+	background-position: -26px 50%;
+}
+
+.sssprev:hover, .sssnext:hover {
+	cursor: pointer;
+}
+
+.background-sslide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter:alpha(opacity=85);
+      -moz-opacity:0.85;
+      -khtml-opacity: 0.85;
+      opacity: 0.85;
+}
+
+.title-sslide {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.text-header-sslide, .text-header-sslide .feature {
+  color: #FFF;
+}
+
+.light, .text-header-sslide {
+  padding: 0 10px;
+  font-family: Lato;
+  font-weight: 300;
+  z-index: 2;
+  position: relative;
+  letter-spacing: 1;
+  line-height: 1.4em;
+}

@@ -1,0 +1,95 @@
+{% extends "homepage/homepage_base.html" %}
+{% load static template_web %}  
+{% block title %} - {{ title }}{% endblock %}
+{% block container %}
+
+<div class="row">
+
+  <!-- Sidebar Widgets Column -->
+  <div class="col-md-4">
+
+    <!-- Search Widget -->
+    <div class="card my-4">
+      <h5 class="card-header text-capitalize">cari produk peraturan</h5>
+      <div class="card-body">
+      <form>
+        <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formJenisPeraturan" class="mb-0">Jenis Peraturan:</label>
+          <input type="text" class="form-control mb-0" id="formJenisPeraturan">
+        </div>
+        <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formNomorPeraturan" class="mb-0">Nomor:</label>
+          <input type="text" class="form-control mb-0" id="formNomorPeraturan">
+        </div>
+          <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formTahunPeraturan" class="mb-0">Tahun:</label>
+          <input type="text" class="form-control mb-0" id="formTahunPeraturan">
+        </div>
+          <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formTentangPeraturan" class="mb-0">Subjek/Tentang:</label>
+          <input type="text" class="form-control mb-0" id="formTentangPeraturan">
+        </div>
+        <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formStatusAkhir" class="mb-0">Status Akhir:</label>
+          <input type="text" class="form-control mb-0" id="formStatusAkhir">
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary">Cari Peraturan</button>
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <div class="card my-4">
+      <h5 class="card-header text-capitalize">cari produk non peraturan</h5>
+      <div class="card-body">
+      <form>
+        <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formJenisPeraturan" class="mb-0">Judul:</label>
+          <input type="text" class="form-control mb-0" id="formJenisPeraturan">
+        </div>
+        <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formNomorPeraturan" class="mb-0">Pengarang:</label>
+          <input type="text" class="form-control mb-0" id="formNomorPeraturan">
+        </div>
+          <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formTahunPeraturan" class="mb-0">Penerbit:</label>
+          <input type="text" class="form-control mb-0" id="formTahunPeraturan">
+        </div>
+          <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formTentangPeraturan" class="mb-0">Kota Terbit:</label>
+          <input type="text" class="form-control mb-0" id="formTentangPeraturan">
+        </div>
+        <div class="form-group col-sm-12 mb-2 mt-2 line-height-min">
+          <label for="formStatusAkhir" class="mb-0">Tahun Terbit:</label>
+          <input type="text" class="form-control mb-0" id="formStatusAkhir">
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-info">Cari Non Peraturan</button>
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <!-- Side Widget -->
+    <div class="card my-4">
+      <h5 class="card-header">Statistik Pengunjung</h5>
+      <div class="card-body">
+        <!-- DUMMY PENGUNJUNG -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Blog Entries Column -->
+  <div class="col-md-8 mt-5">
+  	<h4>{{ title }}</h4>
+  	{% if image_news %}
+  	<img src="{{ image_news.url }}" style="width: 100%;">
+  	{% endif %}
+  	{{ konten|safe }}
+  </div>
+
+</div>
+
+{% endblock container %}

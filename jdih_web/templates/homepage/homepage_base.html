@@ -1,0 +1,139 @@
+{% load i18n static bootstrap_admin_template_tags template_web %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}"/>
+  <title>Homepage JDIH {% block title %}{% endblock %}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'web/vendor/bootstrap/css/bootstrap.min.css' %}">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="{% static 'web/css/blog-home.css' %}">
+
+  <!-- Slider https://supersimpleslider.com/ -->
+  <script src="{% static 'web/js/jquery-1.12.4.min.js' %}"></script>
+  <script src="{% static 'web/sss/sss.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'web/sss/sss.css' %}" type="text/css" media="all">
+  <script>jQuery(function($) {$('.slider').sss();});</script>
+
+  <!-- realtime clock -->
+  <script type="text/javascript" src="{% static 'web/js/realtime_clock.js' %}"></script>
+  {% block extrajs %} {% endblock %}
+
+  <style type="text/css">
+    .line-height-min{
+      line-height: 1.5 !important;
+    }
+    .blue-theme-footer{
+      background: #0a0446;
+    }
+  </style>
+  {% block extracss %} {% endblock %}
+
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="p-3 d-none d-sm-block blue-theme navbar-static-top header-logo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% homepage_base 'logo' %}" height="80px">
+        </div>
+        <div class="col-md-8 text-right">
+          <img src="{% homepage_base 'banner' %}" width="640px" height="80px">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark blue-theme navbar-static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Beranda</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          {% menu_list %}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container content">
+
+    <div class="row" style="margin-top: -5px; margin-left: inherit !important;">
+
+      <div class="col-md-4" style="background-image: linear-gradient(to right, red , yellow); padding-left: 30px">
+        <b>
+            <span id="realtime_clock"></span>
+            <script type="text/javascript">window.onload = realtime_clock('realtime_clock');</script>
+        </b>
+      </div>
+      <div class="col-md-8 d-none d-sm-block">
+        <marquee width="100%" behavior="scroll" direction="{% running_text 'arah_scroll' %}" \
+          scrollamount="{% running_text 'kecepatan_scroll' %}" \
+          onmouseover="this.stop();" onmouseout="this.start();">{% running_text 'text' %}</marquee>
+      </div>
+
+    </div>
+
+    {% block container %}
+
+    {% endblock %}
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small blue-theme-footer pt-4 text-white">
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+          <!-- Content -->
+          <h5 class="text-uppercase">Alamat</h5>
+          <p>{% homepage_base 'alamat' %}</p>
+        </div>
+        <!-- Grid column -->
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+          <!-- Links -->
+          <h5 class="text-uppercase">Links</h5>
+          <ul class="list-unstyled">
+            {% link_terkait %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Links -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 blue-theme">
+      {% homepage_base 'footer' %}
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'web/vendor/jquery/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'web/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

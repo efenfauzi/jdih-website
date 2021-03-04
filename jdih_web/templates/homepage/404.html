@@ -1,0 +1,11 @@
+{% extends "homepage/homepage_base.html" %}
+{% load i18n static template_web %}  
+{% block title %} - Halaman tidak ditemukan{% endblock %}
+{% block container %}
+<div class="row" style="height: 50vh">
+  <div class="col-lg-12 text-center" style="margin-top: auto !important; margin-bottom: auto !important;">
+  <h2>Halaman tidak ditemukan...</h2>
+  <p>Mohon maaf <b><i>{{ request.path }}</i></b> tidak terdaftar didalam system ini.</p>
+  </div>
+</div>
+{% endblock %}
